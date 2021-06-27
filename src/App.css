@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5em;
+  max-width: 1200px;
+  margin: auto;
+  row-gap: 2em;
+  padding: 2em;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
