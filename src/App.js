@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import useSWR from 'swr';
+import PokemonList from './components/PokemonList';
+
+const url = 'https://pokeapi.co/api/v2/pokemon'
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { data: result, error } = useSWR(url, fetcher);
+    
+    if (error) return <div>failed to load</div>
+    if (!result) return <div>loading...</div>
+    console.log(result);
+    return (
+      
+      <div className="pokemons">
+          {result.results.map((pokemon) => (
+              <PokemonList key={pokemon.name} pokemon={pokemon} />
+              
+          ))}
+          
+      </div>
+    )
+    
 }
-
-export default App;
+export default App
