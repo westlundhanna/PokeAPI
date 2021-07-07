@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import useSWR from 'swr';
 import './Pokemon.css';
 
 
-function Pokemon({ pokemon }) {
+function PokemonCard({ pokemon }) {
 
     const { name } = pokemon;
-    
+
     const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
     const { data, error } = useSWR(url);
 
@@ -30,4 +30,4 @@ function Pokemon({ pokemon }) {
     )
 }
 
-export default Pokemon;
+export default PokemonCard;
