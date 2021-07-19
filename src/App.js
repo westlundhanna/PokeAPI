@@ -11,19 +11,14 @@ import './App.css';
 function App() {
  
   return (
-    <div>
       <Router>
         <Switch>
           <Route exact path="/">
             <PokemonList /> 
-          </Route>
-          <Route exact path="/:pokemonName">
-            <PokemonDetails  />
-          </Route>
+            </Route>
+          <Route path="/:pokemonName" component={PokemonDetails}></Route>
         </Switch>
       </Router>
-    </div>
-
   )
 
 }
