@@ -1,20 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 const PokemonDetails = () => {
     const params = useParams();
 
-    
-    console.log(params)
+    let history = useHistory();
 
-        return (
-            <div>
+    function clickHandler() {
+        history.push("/");
+    }
+
+    return (
+        <>
+            
             <p>{params.pokemonName}</p>
-            </div>
-        )
-    
+            <button onClick={clickHandler}>Go back</button>
+        </>
+    )
 
-        
-    
+
 
 }
 
