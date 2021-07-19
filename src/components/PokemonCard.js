@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 import useSWR from 'swr';
-import './Pokemon.css';
+import './PokemonCard.css';
 
-
-function PokemonCard({ pokemon }) {
+const PokemonCard = ({ pokemon }) => {
 
     const { name } = pokemon;
 
@@ -14,6 +14,10 @@ function PokemonCard({ pokemon }) {
     if (!data) return <div>loading...</div>
 
     return (
+        <Link to={{
+            pathname: `/${data.name}`,
+            pokemonProps: data
+        }}>
         <div className='pokemon-card'>
             <div className='pokemon-card__content'>
                 <p>{data.id}</p>
@@ -27,6 +31,8 @@ function PokemonCard({ pokemon }) {
                 <p>{data.types[0].type.name}</p>
             </div>
         </div>
+        </Link>
+
     )
 }
 
