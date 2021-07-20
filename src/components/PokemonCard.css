@@ -1,0 +1,28 @@
+.pokemon-card {
+    display: flex;
+    padding: 1em;
+}
+.pokemon-card__content {
+    display: flex;
+    margin: auto;
+    column-gap: 1.5em;
+}
+.pokemon-card__image {
+    margin: auto;
+}
+
+.pokemon-card__info {
+    margin: auto;
+}
+
+p {
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pokemons a {
+    background: #009fe3;
+    width: 25%;
+    text-decoration: none;
+    padding: 1em;
+}

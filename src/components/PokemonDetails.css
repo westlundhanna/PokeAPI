@@ -1,0 +1,14 @@
+.pokemon-details {
+    margin: auto;
+    width: 50%;
+    background: #009fe3;
+    padding: 2em;
+}
+
+.pokemon-details__content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
