@@ -1,4 +1,4 @@
-.pokemon-details {
+.pokemon-details__wrapper {
     margin: auto;
     width: 50%;
     background: #009fe3;
@@ -9,6 +9,19 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+}
+
+.pokemon-details__list {
+    list-style-type: none;
+    border: solid 1px;
+    padding: 1em;
+}
+
+.pokemon-details__list li {
+    padding: 0.5em;
+    text-align: center;
+}
+.description {
+    font-style: oblique;
 }

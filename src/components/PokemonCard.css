@@ -15,7 +15,7 @@
     margin: auto;
 }
 
-p {
+p, h1, li {
     color: #000;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
