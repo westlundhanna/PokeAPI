@@ -14,10 +14,12 @@ const PokemonList = () => {
     if (error) return <div>failed to load</div>
     if (!result) return <div>loading...</div>
 
+    result.results.sort((a, b) => a.name < b.name ? -1 : 1);
+
     return (
         <div className="pokemon-list">
             <div className="pokemons">
-                {result.results.sort((a, b) => a.name < b.name ? -1 : 1).map((pokemon) => (
+                {result.results.map((pokemon) => (
                     <PokemonCard key={pokemon.name} pokemon={pokemon} />
                 ))}
             </div>
