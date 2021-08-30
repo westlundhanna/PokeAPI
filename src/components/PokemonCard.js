@@ -26,9 +26,9 @@ const PokemonCard = ({ pokemon }) => {
                     alt={name}
                 />
                 <div className='pokemon-card__info'>
-                    <p className='pokemon-card__name'>Name: {name.charAt(0).toUpperCase() + name.slice(1)}</p>
-                    <p>Abilities: {data.abilities[0].ability.name.charAt(0).toUpperCase() + data.abilities[0].ability.name.slice(1)}</p>
-                    <p>Category: {data.types[0].type.name.charAt(0).toUpperCase() + data.types[0].type.name.slice(1)}</p>
+                    <p className='pokemon-card__name'>Name: {name}</p>
+                    <p className='pokemon-card__abilities'>Abilities: {data.abilities[0].ability.name}</p>
+                    <p className='pokemon-card__categories'>Category: {data.types[0].type.name}</p>
                 </div>
             </div>
         </div>

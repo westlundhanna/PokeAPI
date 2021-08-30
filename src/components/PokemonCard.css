@@ -11,6 +11,10 @@
     margin: auto;
 }
 
+.pokemon-card__name, .pokemon-card__abilities, .pokemon-card__categories {
+    text-transform: capitalize;
+}
+
 .pokemon-card__info {
     margin: auto;
 }

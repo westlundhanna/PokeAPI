@@ -28,7 +28,7 @@ const PokemonDetails = (props) => {
     return (
         <div className="pokemon-details__wrapper">
             <div className="pokemon-details__content">
-                <h1>{result.id}. {name.charAt(0).toUpperCase() + name.slice(1)}</h1>
+                <h1 className='pokemon-details__name'>{result.id}. {name}</h1>
                 <div className="pokemon-details__images">
                     <img
                         className='pokemon-card__image'

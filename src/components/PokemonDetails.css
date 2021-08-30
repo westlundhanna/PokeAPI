@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+.pokemon-details__name {
+    text-transform: capitalize;
+}
+
 .pokemon-details__list {
     list-style-type: none;
     border: solid 1px;
