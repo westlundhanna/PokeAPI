@@ -24,8 +24,18 @@ const PokemonList = () => {
                 ))}
             </div>
             <div className="pagination">
-                <button onClick={() => setIndex(index - 9)}>Previous</button>
-                <button onClick={() => setIndex(index + 9)}>Next</button>
+                <button 
+                    onClick={() => setIndex(index - 9)} 
+                    disabled={result.previous === null}
+                >
+                Previous
+                </button>
+                <button 
+                    onClick={() => setIndex(index + 9)}
+                    disabled={result.next === null}
+                >
+                Next
+                </button>
             </div>
         </div>
     )
