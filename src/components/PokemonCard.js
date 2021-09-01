@@ -29,8 +29,7 @@ const PokemonCard = ({ pokemon }) => {
                 </div>
                 <Link className='pokemon-card__link' to={{
                     pathname: `/${name}`,
-                    pokemonProps: data,
-                    state: pokemon
+                    state: data
                     }}>
                     View Details
                 </Link>
