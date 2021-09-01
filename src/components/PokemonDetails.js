@@ -1,5 +1,4 @@
 import { useHistory } from "react-router-dom";
-import React from "react";
 import useSWR from "swr";
 import './PokemonDetails.css';
 
@@ -7,9 +6,13 @@ const PokemonDetails = (props) => {
 
     const history = useHistory();
 
-    const name = props.location.pokemonProps.name;
+    let savedName =  JSON.stringify(props.location.state.name);
 
-    const url = `https://pokeapi.co/api/v2/pokemon-species/${name}`;
+    localStorage.setItem('name', savedName);
+
+    let retrievedName = JSON.parse(localStorage.getItem('name'));
+
+    const url = `https://pokeapi.co/api/v2/pokemon-species/${retrievedName}`;
 
     const fetcher = (...args) => fetch(...args).then((res) => res.json())
     const { data: result, error } = useSWR(url, fetcher);
@@ -28,17 +31,17 @@ const PokemonDetails = (props) => {
     return (
         <div className="pokemon-details__wrapper">
             <div className="pokemon-details__content">
-                <h1 className='pokemon-details__name'>{result.id}. {name}</h1>
+                <h1 className='pokemon-details__name'>{result.id}. {retrievedName}</h1>
                 <div className="pokemon-details__images">
                     <img
                         className='pokemon-card__image'
-                        src={props.location.pokemonProps.sprites.front_default}
-                        alt={props.location.pokemonProps.name}
+                        src={props.history.location.front_sprite}
+                        alt={retrievedName + " front"}
                     />
                     <img
                         className='pokemon-card__image'
-                        src={props.location.pokemonProps.sprites.back_default}
-                        alt={props.location.pokemonProps.name}
+                        src={props.history.location.back_sprite}
+                        alt={retrievedName + " back"}
                     />
                 </div>
                 <ul className="pokemon-details__list">
