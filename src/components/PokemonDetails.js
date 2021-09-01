@@ -6,13 +6,9 @@ const PokemonDetails = (props) => {
 
     const history = useHistory();
 
-    let savedName =  JSON.stringify(props.location.state.name);
+    const { name, sprites } = props.history.location.state;
 
-    localStorage.setItem('name', savedName);
-
-    let retrievedName = JSON.parse(localStorage.getItem('name'));
-
-    const url = `https://pokeapi.co/api/v2/pokemon-species/${retrievedName}`;
+    const url = `https://pokeapi.co/api/v2/pokemon-species/${name}`;
 
     const fetcher = (...args) => fetch(...args).then((res) => res.json())
     const { data: result, error } = useSWR(url, fetcher);
@@ -31,17 +27,17 @@ const PokemonDetails = (props) => {
     return (
         <div className="pokemon-details__wrapper">
             <div className="pokemon-details__content">
-                <h1 className='pokemon-details__name'>{result.id}. {retrievedName}</h1>
+                <h1 className='pokemon-details__name'>{result.id}. {name}</h1>
                 <div className="pokemon-details__images">
                     <img
                         className='pokemon-card__image'
-                        src={props.history.location.front_sprite}
-                        alt={retrievedName + " front"}
+                        src={sprites.front_default}
+                        alt={name + " front"}
                     />
                     <img
                         className='pokemon-card__image'
-                        src={props.history.location.back_sprite}
-                        alt={retrievedName + " back"}
+                        src={sprites.back_default}
+                        alt={name + " back"}
                     />
                 </div>
                 <ul className="pokemon-details__list">
