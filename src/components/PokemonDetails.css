@@ -29,3 +29,16 @@
 .description {
     font-style: oblique;
 }
+
+.go-back {
+    color: white;
+    cursor: pointer;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    background: rgb(53, 175, 22);
+    border: white solid;
+}
+
+.go-back:hover {
+    background: rgb(255, 177, 8);
+}
