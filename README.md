@@ -9,4 +9,5 @@ After first feedback received 2021-08-30, the following have been updated:
 * När det kommer till pagineringen så är det jättebra att du använde offset/limit och enbart hämtar de korten som finns på sidan. Dock så fungerar inte edge-cases, tillexempel när man är på sida 1 och klickar på previous knappen kommer man till en tom sida, likadant när man går förbi sidan längst bak. Här vill man antingen disable knappen eller ha ett min/max value för statet.
 * Vi såg även att det fanns lite bibliotek i Package.json som inte används, tex. Test biblioteken utan att du skrivit tester och axios?
 * Sen var det lite småsaker, men till exempel så kan .toUpperCase() funktionen enkelt bytas ut mot CSS styling med samma resultat
-
+* I PokemonCard wrappar du en div i en <Link /> component. Den komponenten i sig är en a-tagg vilket bara ska innehålla text. Så kika gärna på om du kan hitta ett annat sätt att göra routingen på
+* Det är jättebra att detailed page har en egen route. Tyvärr crashar sidan när man laddar om den. Det skulle vara toppen om du kunde fixa så att man kan ladda om den detaljerade sidan också
