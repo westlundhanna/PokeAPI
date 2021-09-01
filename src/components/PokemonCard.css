@@ -1,6 +1,7 @@
 .pokemon-card {
-    display: flex;
     padding: 1em;
+    width: 25%;
+    background: #009fe3;
 }
 .pokemon-card__content {
     display: flex;
@@ -13,6 +14,7 @@
 
 .pokemon-card__name, .pokemon-card__abilities, .pokemon-card__categories {
     text-transform: capitalize;
+    padding: 0px 20px 20px 0px;
 }
 
 .pokemon-card__info {
@@ -24,9 +26,17 @@ p, h1, li {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.pokemons a {
-    background: #009fe3;
-    width: 25%;
+a {
     text-decoration: none;
-    padding: 1em;
+}
+
+.pokemon-card__link {
+    color: white;
+    padding: 0.5rem;
+    background: rgb(53, 175, 22);
+    border: white solid;
+}
+
+.pokemon-card__link:hover {
+    background: rgb(255, 177, 8);
 }
