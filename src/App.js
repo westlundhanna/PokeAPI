@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <PokemonList /> 
-            </Route>
+          </Route>
           <Route path="/:pokemonName" component={PokemonDetails}></Route>
         </Switch>
       </Router>
