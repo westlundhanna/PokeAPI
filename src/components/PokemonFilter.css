@@ -1,0 +1,11 @@
+.pokemon-types__sidebar {
+    width: 20%;
+}
+
+.pokemon-types__filter {
+    list-style: none;
+}
+
+.pokemon-types__filter li {
+    text-transform: capitalize;
+}
